@@ -12,4 +12,5 @@ public class Hero {
         this.specialPower = specialPower;
         this.weakness = weakness;
     }
+
 }
