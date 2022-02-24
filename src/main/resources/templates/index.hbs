@@ -1,14 +1,14 @@
 
 {{#partial "content"}}
     <h4>Enter your heroic information.</h4>
-    <form>
+    <form action="/heroes" method="post" >
         <div class="mb-3">
             <label for="name" class="form-label">Your name</label>
             <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="mb-3">
             <label for="age" class="form-label">Age</label>
-            <input type="integer" class="form-control" id="name" name="age">
+            <input type="integer" class="form-control" id="age" name="age">
         </div>
         <div class="mb-3">
             <label for="power" class="form-label">Special power</label>
@@ -18,6 +18,7 @@
             <label for="weak" class="form-label">Weakness</label>
             <input type="text" class="form-control" id="weakness" name="weakness">
         </div>
+        <button type="submit" class="btn btn-warning" >Submit</button>
     </form>
 {{/partial}}
 
