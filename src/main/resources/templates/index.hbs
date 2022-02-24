@@ -1,5 +1,12 @@
-
-{{#partial "content"}}
+<div class="container">
+<h4>SuperHeroes</h4>
+    {{#if hero}}
+        {{#each hero }}
+            {{name}}
+        {{/each}}
+    {{else}}
+        <h6>No superheroes for now</h6>
+    {{/if}}
     <h4>Enter your heroic information.</h4>
     <form action="/heroes" method="post" >
         <div class="mb-3">
@@ -20,8 +27,7 @@
         </div>
         <button type="submit" class="btn btn-warning" >Submit</button>
     </form>
-{{/partial}}
-
+</div>
 {{> layout.hbs}}
 
 

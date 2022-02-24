@@ -1,5 +1,6 @@
 package module;
 
+import models.Squad;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,3 +28,12 @@ class SquadTest {
         assertEquals("Fight crime",squad.getDedicatedCause());
     }
 }
+
+
+
+
+
+
+
+
+

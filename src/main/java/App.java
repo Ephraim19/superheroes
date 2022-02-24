@@ -1,6 +1,7 @@
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -9,7 +10,9 @@ import models.Hero;
 public class App {
     public static void main(String[] args) {
         get("/",(request, response) -> {
-            Map<String,Object> model = new HashMap<>();
+            Map<String, ArrayList> model = new HashMap<>();
+            ArrayList myHeroes = Hero.getAll();
+            model.put("hero",myHeroes);
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -21,6 +24,7 @@ public class App {
             String power = request.queryParams ("power");
             String weakness = request.queryParams ("weakness");
             Hero hero = new Hero(name,myAge,power,weakness);
+            request.session().attribute("user",name);
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
     }

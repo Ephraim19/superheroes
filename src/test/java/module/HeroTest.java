@@ -1,5 +1,7 @@
 package module;
 
+import models.Hero;
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,11 +18,7 @@ class HeroTest {
         Hero hero = new Hero("Eph",21,"Positive","None");
         assertEquals("Eph",hero.getName());
     }
-    @Test
-    void checksIfAgeGetterMethodReturnsValue() {
-        Hero hero = new Hero("Eph",21,"Positive","None");
-        assertEquals(21,hero.getAge());
-    }
+
     @Test
     void checksIfSpecialPowerGetterMethodReturnsValue() {
         Hero hero = new Hero("Eph",21,"Positive","None");
@@ -31,4 +29,30 @@ class HeroTest {
         Hero hero = new Hero("Eph",21,"Positive","None");
         assertEquals("None",hero.getWeakness());
     }
+    @Test
+    void checksIfAgeGetterMethodReturnsValue() {
+        Hero hero = new Hero("Eph",21,"Positive","None");
+        assertEquals(21,hero.getAge());
+    }
+
+    @Test
+    void TestIfGetterMethodGetAllRuturnsAllValues() {
+        Hero hero = new Hero("Eph",21,"Positive","None");
+        Hero heroine = new Hero("Natasha",21,"Positive","None");
+        assertEquals(3,Hero.getAll().size());
+
+    }
+    @After
+    public void tearDown() {
+        Hero.clearAllPosts();
+    }
 }
+
+
+
+
+
+
+
+
+
