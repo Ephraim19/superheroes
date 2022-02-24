@@ -1,4 +1,4 @@
-package module;
+package models;
 
 public class Hero {
     private String name;
