@@ -10,4 +10,16 @@ public class Squad {
         this.name = name;
         this.dedicatedCause = dedicatedCause;
     }
+
+    public Integer getMaxSize() {
+        return maxSize;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDedicatedCause() {
+        return dedicatedCause;
+    }
 }

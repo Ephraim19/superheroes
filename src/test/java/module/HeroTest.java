@@ -8,7 +8,7 @@ class HeroTest {
     @Test
     void testForInstancesOfHero () {
         Hero hero = new Hero("Eph",21,"Positive","None");
-        assertEquals(true,hero instanceof Hero);
+        assertTrue(true);
     }
 
     @Test
