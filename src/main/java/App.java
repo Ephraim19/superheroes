@@ -12,6 +12,7 @@ public class App {
             Map<String,Object> model = new HashMap<>();
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
+
         post("/heroes",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             String name = request.queryParams ("name");
