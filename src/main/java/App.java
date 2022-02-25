@@ -13,6 +13,7 @@ public class App {
             Map<String, ArrayList> model = new HashMap<>();
             ArrayList myHeroes = Hero.getAll();
             model.put("hero",myHeroes);
+            String sessionData = request.session().attribute("user");
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 

@@ -4,11 +4,13 @@ public class Squad {
     private Integer maxSize;
     private String name;
     private  String dedicatedCause;
+    private Hero heroSquad;
 
-    public Squad(Integer maxSize,String name, String dedicatedCause) {
+    public Squad(Integer maxSize,String name, String dedicatedCause,Hero hero) {
         this.maxSize = maxSize;
         this.name = name;
         this.dedicatedCause = dedicatedCause;
+        heroSquad = hero;
     }
 
     public Integer getMaxSize() {
