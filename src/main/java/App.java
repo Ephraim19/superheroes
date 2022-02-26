@@ -14,6 +14,8 @@ public class App {
             Map<String, ArrayList> model = new HashMap<>();
             ArrayList myHeroes = Hero.getAll();
             model.put("hero",myHeroes);
+            ArrayList mySquad = Squad.getAllData();
+            model.put("squad",mySquad);
             String sessionData = request.session().attribute("user");
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
