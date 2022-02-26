@@ -25,9 +25,17 @@ public class App {
             Integer myAge = Integer.valueOf(age);
             String power = request.queryParams ("power");
             String weakness = request.queryParams ("weakness");
-            String squad = request.queryParams("squad");
             Hero hero = new Hero(name,myAge,power,weakness);
-            Squad squad1 = new Squad(3,"Doers","Fighting crime",hero);
+            String squad = request.queryParams("squad");
+            if (squad.equals("squadA")){
+                Squad squad1 = new Squad(3,"The Fighters","Fighting crime",hero);
+            } else if(squad.equals("squadB")){
+                Squad squad1 = new Squad(3,"The winners","Fighting terrorism",hero);
+            }else if(squad.equals("squadC")){
+                Squad squad1 = new Squad(3,"The Foodies","Fighting hunger",hero);
+            }else {
+                System.out.println("No squad data is selected");
+            }
             model.put("hero",hero);
             request.session().attribute("user",name);
             return new ModelAndView(model,"success.hbs");
