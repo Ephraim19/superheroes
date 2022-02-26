@@ -1,3 +1,4 @@
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -24,7 +25,10 @@ public class App {
             Integer myAge = Integer.valueOf(age);
             String power = request.queryParams ("power");
             String weakness = request.queryParams ("weakness");
+            String squad = request.queryParams("squad");
             Hero hero = new Hero(name,myAge,power,weakness);
+            Squad squad1 = new Squad(3,"Doers","Fighting crime",hero);
+            model.put("hero",hero);
             request.session().attribute("user",name);
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());

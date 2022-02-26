@@ -13,6 +13,7 @@ public class Squad {
         heroSquad = hero;
     }
 
+
     public Integer getMaxSize() {
         return maxSize;
     }
@@ -23,5 +24,9 @@ public class Squad {
 
     public String getDedicatedCause() {
         return dedicatedCause;
+    }
+
+    public Hero getData(){
+        return heroSquad;
     }
 }

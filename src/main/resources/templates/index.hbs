@@ -3,6 +3,9 @@
     {{#if hero}}
         {{#each hero }}
             {{name}}
+            {{age}}
+            {{specialPower}}
+            {{weakness}}
         {{/each}}
     {{else}}
         <h6>No superheroes for now</h6>
@@ -25,7 +28,28 @@
             <label for="weak" class="form-label">Weakness</label>
             <input type="text" class="form-control" id="weakness" name="weakness">
         </div>
-        <button type="submit" class="btn btn-warning" >Submit</button>
+
+        <p>Choose your squad</p>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="squad" id="squad">
+            <label class="form-check-label" for="squad">
+                Squad a
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="squad" id="squad">
+            <label class="form-check-label" for="squad1">
+                Squad b
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="squad" id="squad">
+            <label class="form-check-label" for="squad2">
+                Squad c
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-warning mt-3" >Submit</button>
     </form>
 </div>
 {{> layout.hbs}}
