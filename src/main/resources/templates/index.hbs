@@ -2,10 +2,14 @@
 <h4>SuperHeroes</h4>
     {{#if hero}}
         {{#each hero }}
-            {{name}}
-            {{age}}
-            {{specialPower}}
-            {{weakness}}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Superhero: <b>{{name}}</b></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Special power: {{specialpower}}</h6>
+                    <p>Age: {{age}}</p>
+                    <p>Weakness: {{weakness}}</p>
+                </div>
+            </div>
         {{/each}}
         {{#each squad}}
             {{name}}

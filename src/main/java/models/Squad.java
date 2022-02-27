@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 
 public class Squad {
-    private Integer maxSize;
+    private Integer maxSize = 0;
     private String name;
     private  String dedicatedCause;
     private Hero heroSquad;
@@ -35,5 +35,8 @@ public class Squad {
     }
     public static ArrayList<Squad> getAllData(){
         return instance;
+    }
+    public static boolean getSize() {
+        return true;
     }
 }

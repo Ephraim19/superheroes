@@ -41,6 +41,14 @@ class SquadTest {
         Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
         assertEquals(testHero,squad.getData());
     }
+    //Test for ensuring heroes don't exceed the max number
+
+    @Test
+    void HeroesDontExceedMaxNumber() {
+        Hero testHero = new Hero("Eph",21,"positive","none");
+        Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
+
+    }
 }
 
 

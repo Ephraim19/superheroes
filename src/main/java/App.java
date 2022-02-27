@@ -16,6 +16,8 @@ public class App {
             model.put("hero",myHeroes);
             ArrayList mySquad = Squad.getAllData();
             model.put("squad",mySquad);
+            boolean len = Squad.getSize();
+            System.out.println(len);
             String sessionData = request.session().attribute("user");
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
