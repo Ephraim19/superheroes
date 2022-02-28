@@ -16,19 +16,19 @@ class SquadTest {
     }
 
     @Test
-    void testGetterMethodofMaxSize() {
+    void testGetterMethodOfMaxSize() {
         Hero testHero = new Hero("Eph",21,"positive","none");
         Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
         assertEquals(5,squad.getMaxSize());
     }
     @Test
-    void testGetterMethodofName() {
+    void testGetterMethodOfName() {
         Hero testHero = new Hero("Eph",21,"positive","none");
         Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
         assertEquals("Chelsea",squad.getName());
     }
     @Test
-    void testGetterMethodofDedicatedCause() {
+    void testGetterMethodOfDedicatedCause() {
         Hero testHero = new Hero("Eph",21,"positive","none");
         Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
         assertEquals("Fight crime",squad.getDedicatedCause());
@@ -40,14 +40,6 @@ class SquadTest {
         Hero testHero = new Hero("Eph",21,"positive","none");
         Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
         assertEquals(testHero,squad.getData());
-    }
-    //Test for ensuring heroes don't exceed the max number
-
-    @Test
-    void HeroesDontExceedMaxNumber() {
-        Hero testHero = new Hero("Eph",21,"positive","none");
-        Squad squad = new Squad(5,"Chelsea","Fight crime",testHero);
-
     }
 }
 
