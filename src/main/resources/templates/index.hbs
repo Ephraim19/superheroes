@@ -4,15 +4,15 @@
         {{#each hero }}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Superhero: <b>{{name}}</b></h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Special power: {{specialpower}}</h6>
-                    <p>Age: {{age}}</p>
-                    <p>Weakness: {{weakness}}</p>
+                    <h6 class="card-title">Superhero: <b>{{name}}</b></h6>
+                    <p class="card-subtitle mb-6 text-muted">Special power: <b>{{specialPower}}</b></p>
+                    <p>Age: <b>{{age}}</b></p>
+                    <p>Weakness: <b>{{weakness}}</b></p>
                 </div>
             </div>
-        {{/each}}
-        {{#each squad}}
-            {{name}}
+            {{#each squad}}
+                <p>{{name}}</p>
+            {{/each}}
         {{/each}}
     {{else}}
         <h6>No superheroes for now</h6>
