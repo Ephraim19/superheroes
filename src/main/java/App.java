@@ -10,6 +10,8 @@ import static spark.Spark.*;
 import models.Hero;
 public class App {
     public static void main(String[] args) {
+        staticFileLocation("/public");
+
         get("/",(request, response) -> {
             Map<String, ArrayList> model = new HashMap<>();
             ArrayList myHeroes = Hero.getAll();
@@ -34,7 +36,7 @@ public class App {
             if (squad.equals("squadA")){
                 Squad squad1 = new Squad(3,"The Fighters","Fighting crime",hero);
             } else if(squad.equals("squadB")){
-                Squad squad1 = new Squad(3,"The winners","Fighting terrorism",hero);
+                Squad squad1 = new Squad(3,"The winners","Helping the needy",hero);
             }else if(squad.equals("squadC")){
                 Squad squad1 = new Squad(3,"The Foodies","Fighting hunger",hero);
             }else {

@@ -1,21 +1,28 @@
+<div class="bg-warning mb-2 ">
+<div class="p-4 mx-auto" style="width: 150px;">
+    <h4>Superheroes</h4>
+</div>
+</div>
+
 <div class="container">
 <h4>SuperHeroes</h4>
     {{#if hero}}
         {{#each hero }}
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h6 class="card-title">Superhero: <b>{{name}}</b></h6>
-                    <p class="card-subtitle mb-6 text-muted">Special power: <b>{{specialPower}}</b></p>
-                    <p>Age: <b>{{age}}</b></p>
-                    <p>Weakness: <b>{{weakness}}</b></p>
+                    <h6 class="card-title mb-1">Superhero: <b class="text-danger" >{{name}}</b></h6>
+                    <p class="card-subtitle mb-1 ">Special power: <b class="text-danger" >{{specialPower}}</b></p>
+                    <p>Age: <b class="text-danger" >{{age}}</b></p>
+                    <p>Weakness: <b class="text-danger" >{{weakness}}</b></p>
                 </div>
             </div>
+        <h4>Squads</h4>
             {{#each squad}}
-                <p>{{name}}</p>
+                <b class="text-danger" >{{name}}</b>
             {{/each}}
         {{/each}}
     {{else}}
-        <h6>No superheroes for now</h6>
+        <h6 class="text-danger">No superheroes for now</h6>
     {{/if}}
     <h4>Enter your heroic information.</h4>
     <form action="/heroes" method="post" >
@@ -40,19 +47,19 @@
         <div class="form-check">
             <input class="form-check-input" type="radio" name="squad" id="squad" value="squadA">
             <label class="form-check-label" for="squad">
-                Squad a
+                The Fighters-Committed to fighting crime.
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="squad" id="squad" value="squadB">
             <label class="form-check-label" for="squad1">
-                Squad b
+                The winners - Committed to helping the needy.
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="squad" id="squad" value="squadC">
             <label class="form-check-label" for="squad2">
-                Squad c
+                The foodies - Committed to fighting hunger.
             </label>
         </div>
 
