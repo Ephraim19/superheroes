@@ -8,18 +8,18 @@
 <h4>SuperHeroes</h4>
     {{#if hero}}
         {{#each hero }}
-            <div class="card" style="width: 18rem;">
+            <div class="card mb-3" style="width: 25rem;">
                 <div class="card-body">
-                    <h6 class="card-title mb-1">Superhero: <b class="text-danger" >{{name}}</b></h6>
-                    <p class="card-subtitle mb-1 ">Special power: <b class="text-danger" >{{specialPower}}</b></p>
+                    <h6 class="card-title mb-2">Superhero: <b class="text-danger" >{{name}}</b></h6>
+                    <p class="card-subtitle mb-2 ">Special power: <b class="text-danger" >{{specialPower}}</b></p>
                     <p>Age: <b class="text-danger" >{{age}}</b></p>
                     <p>Weakness: <b class="text-danger" >{{weakness}}</b></p>
                 </div>
             </div>
+        {{/each}}
         <h4>Squads</h4>
-            {{#each squad}}
-                <b class="text-danger" >{{name}}</b>
-            {{/each}}
+        {{#each squad}}
+            <b class="text-danger mb-2" >{{name}}</b> <br>
         {{/each}}
     {{else}}
         <h6 class="text-danger">No superheroes for now</h6>
