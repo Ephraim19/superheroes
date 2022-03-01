@@ -1,11 +1,14 @@
-plugins {
-    id 'java'
-}
+//plugins {
+  //  id 'java-library'
+  //  id 'application'
+//}
+apply plugin: 'java'
+apply plugin: 'application'
 
 group 'heroes-app'
 version '1.0-SNAPSHOT'
 
-//mainClassName = 'App'
+mainClassName = 'App'
 
 repositories {
     mavenCentral()
