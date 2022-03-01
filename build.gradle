@@ -21,8 +21,8 @@ dependencies {
     compile 'org.slf4j:slf4j-simple:1.7.36'
 }
 
-test {
-    useJUnitPlatform()
-}
+//test {
+  //  useJUnitPlatform()
+//}
 applicationName = "heroes"
 task stage(dependsOn: ['clean', 'installDist'])
