@@ -5,7 +5,7 @@ plugins {
 group 'heroes-app'
 version '1.0-SNAPSHOT'
 
-mainClassName = 'App'
+//mainClassName = 'App'
 
 repositories {
     mavenCentral()
