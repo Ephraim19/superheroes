@@ -1,1 +1,1 @@
-web: ./build/install/todo/bin/heroes
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/heroes-1.0-jar-with-dependencies.jar
