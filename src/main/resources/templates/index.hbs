@@ -21,6 +21,7 @@
         {{#each squad}}
             <b class="text-danger mb-2" >{{name}}</b> <br>
         {{/each}}
+        <a href="/delete">Delete</a>
     {{else}}
         <h6 class="text-danger">No superheroes for now</h6>
     {{/if}}
@@ -42,7 +43,6 @@
             <label for="weak" class="form-label">Weakness</label>
             <input type="text" class="form-control" id="weakness" name="weakness">
         </div>
-
         <p>Choose your squad</p>
         <div class="form-check">
             <input class="form-check-input" type="radio" name="squad" id="squad" value="squadA">
@@ -65,6 +65,7 @@
 
         <button type="submit" class="btn btn-warning mt-3" >Submit</button>
     </form>
+
 </div>
 <div class="bg-warning mb-2 ">
     <div class="p-4 mx-auto" style="width: 150px;">

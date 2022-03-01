@@ -21,7 +21,7 @@ public class App {
 
         port(port);
         staticFileLocation("/public");
-
+       //Read heroes
         get("/",(request, response) -> {
             Map<String, ArrayList> model = new HashMap<>();
             ArrayList myHeroes = Hero.getAll();
@@ -34,6 +34,7 @@ public class App {
             return new ModelAndView(model,"index.hbs");
         },new HandlebarsTemplateEngine());
 
+        //Create heroes
         post("/heroes",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             String name = request.queryParams ("name");
@@ -56,6 +57,16 @@ public class App {
             request.session().attribute("user",name);
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
+
+        // delete all heroes
+        get("/delete", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Hero.clearAllHeroes();
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+
     }
 }
 

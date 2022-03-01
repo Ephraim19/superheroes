@@ -35,7 +35,7 @@ public class Hero {
         return weakness;
     }
 
-    public static void clearAllPosts(){
+    public static void clearAllHeroes(){
         instance.clear();
     }
 }
