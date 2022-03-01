@@ -39,4 +39,7 @@ public class Squad {
     public static boolean getSize() {
         return true;
     }
+    public static void clearAllSquads(){
+        instance.clear();
+    }
 }

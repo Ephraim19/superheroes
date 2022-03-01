@@ -14,6 +14,12 @@ class HeroTest {
     }
 
     @Test
+    void checksIfIdGetterMethodReturnsValue() {
+        Hero hero = new Hero(1,"Eph",21,"Positive","None");
+        assertEquals(1,hero.getId());
+    }
+
+    @Test
     void checksIfNameGetterMethodReturnsValue() {
         Hero hero = new Hero(1,"Eph",21,"Positive","None");
         assertEquals("Eph",hero.getName());

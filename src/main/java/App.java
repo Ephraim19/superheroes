@@ -62,6 +62,7 @@ public class App {
         get("/delete", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             Hero.clearAllHeroes();
+            Squad.clearAllSquads();
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
