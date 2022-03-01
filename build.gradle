@@ -2,7 +2,7 @@
   //  id 'java-library'
   //  id 'application'
 //}
-apply plugin: 'java'
+apply plugin: 'java-library'
 apply plugin: 'application'
 
 group 'heroes-app'
