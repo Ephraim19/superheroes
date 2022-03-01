@@ -42,7 +42,7 @@ public class App {
             Integer myAge = Integer.valueOf(age);
             String power = request.queryParams ("power");
             String weakness = request.queryParams ("weakness");
-            Hero hero = new Hero(name,myAge,power,weakness);
+            Hero hero = new Hero(1,name,myAge,power,weakness);
             String squad = request.queryParams("squad");
             if (squad.equals("squadA")){
                 Squad squad1 = new Squad(3,"The Fighters","Fighting crime",hero);
