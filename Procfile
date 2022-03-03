@@ -1,1 +1,1 @@
-web:    java -cp "target/dependency/*":target/classes heroes
+web:    java -cp "target/dependency/*":target/classes App
