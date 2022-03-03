@@ -20,7 +20,7 @@ public class App {
     public static void main(String[] args) {
 
         port(getHerokuAssignedPort());
-        //staticFileLocation("/public");
+        staticFileLocation("/public");
 
        //Read heroes
         get("/",(request, response) -> {
