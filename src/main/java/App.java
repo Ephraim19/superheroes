@@ -9,23 +9,26 @@ import java.util.Map;
 import static spark.Spark.*;
 import models.Hero;
 public class App {
-    public static void main(String[] args) {
-        ProcessBuilder process = new ProcessBuilder();
-        Integer port;
-
-        if (process.environment().get("PORT") != null) {
-            port = Integer.parseInt(process.environment().get("PORT"));
-        } else {
-            port = 4567;
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 
-        port(port);
+    public static void main(String[] args) {
+
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
+
        //Read heroes
         get("/",(request, response) -> {
             Map<String, ArrayList> model = new HashMap<>();
+
             ArrayList myHeroes = Hero.getAll();
             model.put("hero",myHeroes);
+
             ArrayList mySquad = Squad.getAllData();
             model.put("squad",mySquad);
             System.out.println(mySquad);
