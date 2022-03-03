@@ -1,1 +1,1 @@
-web:    java -cp "target/dependency/*":target/classes App
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.example.heroes-app
