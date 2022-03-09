@@ -1,6 +1,3 @@
-package module;
-
-import models.Hero;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 

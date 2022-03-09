@@ -1,0 +1,60 @@
+<div class="bg-warning mb-2 ">
+    <div class="p-4 mx-auto" style="width: 150px;">
+        <h4>Superheroes</h4>
+    </div>
+</div>
+
+<div class="container">
+    {{#if squad}}
+        <h4>Squads</h4>
+    {{/if}}
+    {{#each squad}}
+        <b class="text-danger mb-2" >{{name}} squad that fights {{dedicatedCause}} with a max number of {{maxSize}}. <a href="/heroes/add">Add heroes</a></b> <br>
+    {{/each}}
+    {{#if hero}}
+        <h5>member heroes</h5>
+        {{#each hero }}
+            <div class="card mb-3" style="width: 25rem;">
+                <div class="card-body">
+                    <h6 class="card-title mb-2">Superhero: <b class="text-danger" >{{name}}</b></h6>
+                    <p class="card-subtitle mb-2 ">Special power: <b class="text-danger" >{{specialPower}}</b></p>
+                    <p>Age: <b class="text-danger" >{{age}}</b></p>
+                    <p>Weakness: <b class="text-danger" >{{weakness}}</b></p>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p></p>
+    {{/if}}
+
+    {{#if squad}}
+        <a href="/delete">Delete</a>
+    {{/if}}
+
+    <h4>Create a squad</h4>
+
+    <form action="/squads" method="post" >
+        <div class="mb-3">
+            <label for="name" class="form-label">Squad name</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="max" class="form-label">Max number</label>
+            <input type="integer" class="form-control" id="max" name="max">
+        </div>
+        <div class="mb-3">
+            <label for="purpose" class="form-label">Purpose</label>
+            <input type="text" class="form-control" id="purpose" name="purpose">
+        </div>
+        <button type="submit" class="btn btn-warning mt-3" >Submit</button>
+    </form>
+
+</div>
+<div class="bg-warning mb-2 ">
+    <div class="p-4 mx-auto" style="width: 150px;">
+        <b>Superheroes</b>
+        <b>machayoephraim@gmail.com</b>
+        <b>Thank you</b>
+    </div>
+</div>
+{{> layout.hbs}}

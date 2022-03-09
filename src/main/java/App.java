@@ -1,4 +1,4 @@
-import models.Squad;
+
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static spark.Spark.*;
-import models.Hero;
+
 public class App {
     static int getHerokuAssignedPort() {
         ProcessBuilder processBuilder = new ProcessBuilder();
@@ -22,19 +22,17 @@ public class App {
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
-       //Read heroes
+        //Read heroes and squads
         get("/",(request, response) -> {
             Map<String, ArrayList> model = new HashMap<>();
 
             ArrayList myHeroes = Hero.getAll();
             model.put("hero",myHeroes);
-
             ArrayList mySquad = Squad.getAllData();
-            model.put("squad",mySquad);
             System.out.println(mySquad);
-            boolean len = Squad.getSize();
-            String sessionData = request.session().attribute("user");
-            return new ModelAndView(model,"index.hbs");
+            model.put("squad",mySquad);
+
+            return new ModelAndView(model,"squads.hbs");
         },new HandlebarsTemplateEngine());
 
         //Create heroes
@@ -45,19 +43,12 @@ public class App {
             Integer myAge = Integer.valueOf(age);
             String power = request.queryParams ("power");
             String weakness = request.queryParams ("weakness");
-            Hero hero = new Hero(1,name,myAge,power,weakness);
-            String squad = request.queryParams("squad");
-            if (squad.equals("squadA")){
-                Squad squad1 = new Squad(3,"The Fighters","Fighting crime",hero);
-            } else if(squad.equals("squadB")){
-                Squad squad1 = new Squad(3,"The winners","Helping the needy",hero);
-            }else if(squad.equals("squadC")){
-                Squad squad1 = new Squad(3,"The Foodies","Fighting hunger",hero);
-            }else {
-                System.out.println("No squad data is selected");
+            System.out.println(Squad.max());
+            if(Squad.max()) {
+                Hero hero = new Hero(1, name, myAge, power, weakness);
+                model.put("hero", hero);
+                request.session().attribute("user", name);
             }
-            model.put("hero",hero);
-            request.session().attribute("user",name);
             return new ModelAndView(model,"success.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -70,9 +61,28 @@ public class App {
             return null;
         }, new HandlebarsTemplateEngine());
 
+        //path to squads
+        get("/heroes/add",(request,response) ->{
+            Map<String, Object> model = new HashMap<>();
+
+            return new ModelAndView(model,"index.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //Create squads
+        post("/squads",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams ("name");
+            String max = request.queryParams ("max");
+            Integer maxSize = Integer.valueOf(max);
+            String purpose = request.queryParams ("purpose");
+            Squad squad = new Squad(maxSize,name,purpose);
+            model.put("squad",squad);
+            return new ModelAndView(model,"success.hbs");
+        },new HandlebarsTemplateEngine());
 
     }
 }
+
 
 
 
